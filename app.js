@@ -30,8 +30,8 @@ client.get('framework', function(erro, callBack)
  client.hgetall('Pacheco', function(err, object) { console.log(object); });
 
  /* Armazenando e recuperando Listas */
- client.rpush(['Pacheco', 'AngularJS', 'BackboneJS'], function(erro, callBack){ console.log(callBack); }); 
- client.lrange('Pacheco', 0, -1, function(err, reply) { console.log(reply)});
+ client.rpush('lista',['Pacheco', 'AngularJS', 'BackboneJS'], function(erro, callBack){ console.log(callBack); }); 
+ client.lrange('lista', 0, -1, function(err, reply) { console.log(reply)});
 
 /* Limpando chaves */
  client.del('tags', function(err, reply) { console.log( "Quantidade de chaves: " + reply); });
